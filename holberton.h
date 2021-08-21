@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <errno.h>
 
 typedef struct list
 {
@@ -16,6 +17,8 @@ typedef struct list
 	struct list *next;
 } list_t;
 
-
+void print_prompt1(void);
+void print_prompt2(void);
+char *read_cmd(void);
 
 #endif
