@@ -20,14 +20,11 @@ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 
 .SS Interaction
 .PP
-.B $
-ls
-.B $
-/bin/ls
+.B $ ls /bin/ls
 
 .SS Non Interactive
 .PP
-echo \*(lq/bin/ls\*(rq | ./hsh
+.B ./hsh
 
 .SH BUGS
 No known bugs.
