@@ -1,50 +1,48 @@
 #include "holberton.h"
-
-char *c_strdup(char *str, int cs)
+/**
+ * _getenv - searches the environment for given string
+ * @name: name to search for in environment
+ * @environ: environmental variables matrix
+ *
+ * Return: string that contains name
+*/
+char *_getenv(const char *name, char **environ)
 {
-	char *dup_str;
-	int i, len = 0;
+	int i = 0, j = 0, k = 0, m = 0;
+	char *str;
 
+	while (*environ)
+	{
+		i = 0;
+		j = 0;
+		while (name[i] != '\0' && (*environ)[j] != '=')
+		{
+			if (name[i] == (*environ)[j])
+			{
+				i++;
+				j++;
+			}
+			else
+				break;
+		}
+		if ((*environ)[j] == '=' && name[i] == '\0')
+			break;
+		(*environ)++;
+	}
+	m = j;
+	while ((*environ)[m] != '\0')
+		m++;
+	m -= j;
+	j++;
+	str = malloc(sizeof(char) * m + 1);
 	if (str == NULL)
 		return (NULL);
-
-	while (*(str + len))
-		len++;
-	len++;
-
-	dup_str = malloc(sizeof(char) * (len - cs));
-	if (dup_str == NULL)
-		return (NULL);
-
-	i = 0;
-	while (i < (len - cs ))
+	while ((*environ)[j] != '\0')
 	{
-		*(dup_str + i) = * (str + cs + i);
-		i++;
+		str[k] = (*environ)[j];
+		j++;
+		k++;
 	}
-	return (dup_str);
+	str[k] = '\0';
+	return (str);
 }
-
-char *get_env(char *str, list_t *env)
-{
-	int j = 0, cs = 0;
-
-	while (env != NULL)
-	{
-		j = 0;
-		while ((env->var)[j] == str[j])
-			j++;
-
-		if (str[j] == '\0' &&(env->var)[j] == '=')
-			break;
-		env = env->next;
-	}
-
-	while (str[cs] != '\0')
-		cs++;
-	cs++;
-
-	return (c_strdup(env->var, cs));
-}
-
-
