@@ -54,7 +54,11 @@ char *int_to_string(int number);
 char *_which(char *str, list_t *env);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
+<<<<<<< HEAD
 char *_strdup(char *str);
+=======
+int _strcmp(char *s1, char *s2);
+>>>>>>> 849804caed46bb5f13acdf3606573f2a472b4bb0
 
 void free_double_ptr(char **str);
 void ctrl_D(int i, char *command, list_t *env);

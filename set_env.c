@@ -69,9 +69,9 @@ int _setenv(list_t **env, char **str)
 		free_double_ptr(str);
 		return (-1);
 	}
-	cat = strdup(str[1]); /* concatenate strings to be new node data */
-	cat = strcat(cat, "=");
-	cat = strcat(cat, str[2]);
+	cat = _strdup(str[1]); /* concatenate strings to be new node data */
+	cat = _strcat(cat, "=");
+	cat = _strcat(cat, str[2]);
 	index = find_env(*env, str[1]); /* find idx to traverse to node */
 	if (index == -1)
 	{
@@ -86,7 +86,7 @@ int _setenv(list_t **env, char **str)
 			j++;
 		}
 		free(holder->var); /* else free malloced data */
-		holder->var = strdup(cat); /* assign to new malloced data */
+		holder->var = _strdup(cat); /* assign to new malloced data */
 	}
 	free(cat);
 	free_double_ptr(str);
