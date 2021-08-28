@@ -1,9 +1,6 @@
 #include "holberton.h"
-/**
- * numlen - counts number of 0s in a tens power number
- * @n: number
- * Return: returns count of digits
- */
+
+
 int numlen(int n)
 {
 	int count = 0;
@@ -21,6 +18,7 @@ int numlen(int n)
  * @number: int
  * Return: returns the int as a string. returns NULL if failed
  */
+
 char *int_to_string(int number)
 {
 	int digits, tens, i = 0, t = 0, x;

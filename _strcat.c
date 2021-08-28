@@ -1,34 +1,38 @@
 #include "holberton.h"
 /**
  * _strcat - concatenate two strings
- * @dest: string to be appended to
- * @src: string to append
- * Return: concatenated string
+ * @dest: destiny
+ * @src: source
+ * Return: str
  */
+
 char *_strcat(char *dest, char *src)
 {
-	int len = 0;
-	int len2 = 0;
+	int l = 0;
+	int l2 = 0;
 	int total_len = 0;
 	int j = 0;
 
-	while (dest[len] != '\0')
+	while (dest[l] != '\0')
 	{
-		len++;
+		l++;
 		total_len++;
 	}
-	while (src[len2] != '\0')
+	while (src[l2] != '\0')
 	{
-		len2++;
+		l2++;
 		total_len++;
 	}
-	dest = _realloc(dest, len, sizeof(char) * total_len + 1);
+
+	dest = _realloc(dest, l, sizeof(char) * total_len + 1);
+
 	while (src[j] != '\0')
 	{
-		dest[len] = src[j];
-		len++;
+		dest[l] = src[j];
+		l++;
 		j++;
 	}
-	dest[len] = '\0';
+	dest[l] = '\0';
+
 	return (dest);
 }

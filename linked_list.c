@@ -1,9 +1,6 @@
 #include "holberton.h"
-/**
- * print_list - _print linked list
- * @h: linked list
- * Return: size of linked list
- */
+
+
 size_t print_list(list_t *h)
 {
 	list_t *c_list = h;
@@ -32,6 +29,7 @@ size_t print_list(list_t *h)
 	}
 	return (count);
 }
+
 /**
  * add_end_node - add node to end of linked list
  * @head: pointer to head of linked list
@@ -44,12 +42,12 @@ list_t *add_end_node(list_t **head, char *str)
 	list_t *holder;
 
 	if (head == NULL || str == NULL)
-		return (NULL);
+		return (NULL); /* check if address of head is null */
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
 
-	new->var = _strdup(str);
+	new->var = strdup(str);
 	new->next = NULL;
 
 	holder = *head;
@@ -67,6 +65,7 @@ list_t *add_end_node(list_t **head, char *str)
 	}
 	return (*head);
 }
+
 /**
  * delete_nodeint_at_index - removing node at index
  * @head: input head address
@@ -104,6 +103,7 @@ int delete_nodeint_at_index(list_t **head, int index)
 	free(holder);
 	return (1);
 }
+
 /**
  * free_linked_list - frees linked list
  * @list: linked list
@@ -119,4 +119,5 @@ void free_linked_list(list_t *list)
 		free(holder->var);
 		free(holder);
 	}
+
 }
