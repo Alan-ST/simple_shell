@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ * c_atoi - custom atoi converts string to int
+ * @s: string
+ * Return: number if success, -1 if string contains non-numbers
+ */
+
 int c_atoi(char *s)
 {
 	int i = 0;
