@@ -1,6 +1,7 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-
+#define _XOPEN_SOURCE_700
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

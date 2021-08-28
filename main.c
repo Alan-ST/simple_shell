@@ -1,5 +1,3 @@
-#define _XOPEN_SOURCE_700
-#define _GNU_SOURCE
 #include "holberton.h"
 /**
  * main - shell
@@ -9,7 +7,6 @@
  *
  * Return: 0 on success
  */
-
 int main(int __attribute__((unused))ac, char **argv, char **env)
 {
 	char *path;
@@ -38,7 +35,6 @@ int main(int __attribute__((unused))ac, char **argv, char **env)
 				write(STDERR_FILENO, "\n", 1);
 			exit(0);
 		}
-
 		buffer = built_in(buffer, env);
 		if (buffer == NULL)
 		{
@@ -47,10 +43,8 @@ int main(int __attribute__((unused))ac, char **argv, char **env)
 			free(buffer);
 		}
 		args = ret_array(buffer);
-
 		filename = is_exec(path_dirs, buffer);
 		fork_execute(filename, args, argv[0]);
-
 		free(path_dirs);
 		free(path);
 		free(args);
